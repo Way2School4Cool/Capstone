@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d8b0bfc4-a70e-4832-86e7-373ab721a72f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>GRPDDispatchLogger.py</StartupFile>
+    <StartupFile>GRPDDispatchScraper.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="GRPDDispatchLogger.py" />
+    <Compile Include="CSVLogger.py" />
+    <Compile Include="GRPDDispatchScraper.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DispatchLog.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

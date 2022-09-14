@@ -1,6 +1,7 @@
 #Team Crime 9/13
 #Version 0.1
 
+from CSVLogger import writeToCSV
 import requests
 from bs4 import BeautifulSoup
 
@@ -34,7 +35,7 @@ def scrapeDispatch(url):
 
 	#TODO: fix assumtion that the first part of the location is a number
 
-	writeToCSV(MTGProduct)
+	writeToCSV(data)
 	return data
 
 scrapeDispatch(url)
