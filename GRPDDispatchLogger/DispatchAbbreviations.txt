@@ -1,25 +1,47 @@
 THREAT:Threat of Violence
 PEACE:Disturbing the Peace
 TRES:Trespassing
-DISO:Dispatching Officer
+DISO:Disorderly
 ORDINANCE:Ordinance Violation
 DOM:Domestic Dispute
-ASSIST:
+ASSIST:Agency Assist
 WELFARE:Welfare Check
 SUSPICIOUS:Suspicious Activity
-PI:
-911U:
+PI:Personal Injury Traffic Accident
+911U:911 Hang-up
 SUICIDETH:Threat of Suicide
 STOLENV:Stolen Vehicle
-BURGO:Burglary
+BURGO:Burglary Occupied Dwelling
 HARASS:Harassment
 ALARM:Alarm Tripped
 PARKING:Parking Violation
 DOMA:Domestic Assault
-BARK:
+BARK:Barking Dog
 STOP:Traffic Stop
-PD:
+PD:Traffic Accident 
 SHOOTING:Shooting
 SHOTS:Gun Shots
 LARC:Larceny
 MISC:Miscellaneous
+CSC:Criminal Sexual Conduct
+BURGC:Burglary Commercial
+DOAU:Dead on Arrival (Unknown Cause)
+DOA:Dead on Arrival
+FRAUD:Fraud
+DEER:Dead Deer
+ASLT:Assault
+PROSTITUTE:Prostitute
+INJV:Injury Crash
+STALKING:Stalking
+MISSING:Missing Persons (>=18)
+MISSINGJUVENILE:Missing Persons (<18)
+FIGHT:Fight
+WPNB:Weapon Brandishing
+PDB:
+MDOP:Malicious Destruction of Property
+LOSTFOUND:Lost Property
+ECHO:
+NOISE:
+UNKACC:Unknown Accident
+ABAND:
+ARSONINV:

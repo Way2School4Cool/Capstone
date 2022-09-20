@@ -3,7 +3,7 @@
 
 from asyncore import write
 import csv
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 import os
 
@@ -31,7 +31,7 @@ def writeToCSV(data):
 			for x in range(len(writeData)):
 			#if so, do nothing
 				if not finishedLooping \
-					and (dispatchLog[0] > writeData[x][0] \
+					and (datetime.strptime(dispatchLog[0], '%m/%d/%Y') > datetime.strptime(writeData[x][0], '%m/%d/%Y') \
 					or dispatchLog[1] >= writeData[x][1]) :
 					
 					#and dispatchLog[2] == writeData[-x][2] \
@@ -42,7 +42,7 @@ def writeToCSV(data):
 					break
 
 
-	writeData = dataLog + writeData
+	writeData = writeData + dataLog
 
 	#append the users mentioned to the list
 	with open(dateFileName, mode="w", newline="") as dispatchFile:
