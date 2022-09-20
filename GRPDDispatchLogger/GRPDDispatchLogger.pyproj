@@ -25,6 +25,7 @@
     <Compile Include="GRPDDispatchScraper.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DispatchAbbreviations.txt" />
     <Content Include="DispatchLog.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

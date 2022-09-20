@@ -1,0 +1,25 @@
+THREAT:Threat of Violence
+PEACE:Disturbing the Peace
+TRES:Trespassing
+DISO:Dispatching Officer
+ORDINANCE:Ordinance Violation
+DOM:Domestic Dispute
+ASSIST:
+WELFARE:Welfare Check
+SUSPICIOUS:Suspicious Activity
+PI:
+911U:
+SUICIDETH:Threat of Suicide
+STOLENV:Stolen Vehicle
+BURGO:Burglary
+HARASS:Harassment
+ALARM:Alarm Tripped
+PARKING:Parking Violation
+DOMA:Domestic Assault
+BARK:
+STOP:Traffic Stop
+PD:
+SHOOTING:Shooting
+SHOTS:Gun Shots
+LARC:Larceny
+MISC:Miscellaneous
