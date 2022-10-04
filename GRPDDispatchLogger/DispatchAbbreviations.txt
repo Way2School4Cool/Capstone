@@ -37,11 +37,12 @@ MISSING:Missing Persons (>=18)
 MISSINGJUVENILE:Missing Persons (<18)
 FIGHT:Fight
 WPNB:Weapon Brandishing
-PDB:
+PDB:Vehicle Accident
 MDOP:Malicious Destruction of Property
 LOSTFOUND:Lost Property
-ECHO:
-NOISE:
+ECHO:Reopened Call
+NOISE:Noise Complaint
 UNKACC:Unknown Accident
-ABAND:
-ARSONINV:
+ABAND:Abandoned Vehicle
+ARSONINV:Arson Investigation
+UDAA:Vehicle Taken without Permission

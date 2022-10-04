@@ -1,11 +1,13 @@
 #Team Crime 9/13
 #Version 0.1
 
-from asyncore import write
+from asyncore import dispatcher, write
 import csv
 from datetime import date, datetime
 from pathlib import Path
 import os
+
+dispatchParseDoc = "DispatchAbbreviations.txt"
 
 def writeToCSV(data):
 	
@@ -13,8 +15,10 @@ def writeToCSV(data):
 	#check if file exists
 	dateFileName = str(date.today().year) + "-" + str(date.today().month) + "-" + str(date.today().day) + "DispatchLog.csv"
 	
-	path = Path(os.getcwd() + "//" + dateFileName)
+	path = Path(os.getcwd() + "..//..//PDLogs//" + dateFileName)
 	
+	dateFileName = "..//..//PDLogs//" + dateFileName
+
 	if not path.is_file():
 		with open(dateFileName, 'w') as fileCreation:
 			fileCreation.close
@@ -48,4 +52,25 @@ def writeToCSV(data):
 	with open(dateFileName, mode="w", newline="") as dispatchFile:
 		writer = csv.writer(dispatchFile)
 		for newLine in writeData:
+
+			if newLine[2] == "":
+				if dispatchCodeParser(newLine[2]) != "":
+					newLine[2] = dispatchCodeParser(newLine[2])
+				if newLine[2] != "":
+					newLine[3] = newLine[3][0 + len(newLine[2]):]
+					
 			writer.writerow(newLine)
+
+def dispatchCodeParser(dispatchArea):
+	with open(dispatchParseDoc, mode="r", newline="") as parseFile:
+		reader = csv.reader(parseFile)
+
+		for dispatchCode in parseFile:
+
+			#TODO: if dispatch area starts with a letter, the code is probably wrong (or check a for a "/")
+
+
+			if dispatchArea[0:len(dispatchCode)] == dispatchCode:
+				return dispatchCode
+
+	return ""

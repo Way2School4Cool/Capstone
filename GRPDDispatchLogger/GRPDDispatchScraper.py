@@ -1,6 +1,10 @@
 #Team Crime 9/13
 #Version 0.1
 
+from multiprocessing.connection import wait
+import time
+import datetime
+
 from CSVLogger import writeToCSV
 import requests
 from bs4 import BeautifulSoup
@@ -38,4 +42,7 @@ def scrapeDispatch(url):
 	writeToCSV(data)
 	return data
 
-scrapeDispatch(url)
+while (True):
+	scrapeDispatch(url)
+	print("Logged: " + str(datetime.datetime.now()))
+	time.sleep(360)
