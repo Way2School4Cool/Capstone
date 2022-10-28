@@ -1,16 +1,15 @@
 #Team Crime 9/13
 #Version 0.1
 
-from multiprocessing.connection import wait
 import time
 import datetime
-
-from CSVLogger import writeToCSV
 import requests
+from CSVLogger import writeToCSV
 from bs4 import BeautifulSoup
 
 headers = {"user-agent" : "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36;", "from": "cmcgraw@email.davenport.edu"}
 url = "https://data.grcity.us/Dispatch/Dispatched_Calls.html"
+authKeysLocation = "C:\\AuthTokens\\Tokens.csv"
 
 def scrapeDispatch(url):
 	#page = the url request
@@ -41,10 +40,9 @@ def scrapeDispatch(url):
 	#TODO: fix assumtion that the first part of the location is a number
 
 	writeToCSV(data)
-	
 	return data
 
 while (True):
 	scrapeDispatch(url)
 	print("Logged: " + str(datetime.datetime.now()))
-	time.sleep(3)
+	time.sleep(600)

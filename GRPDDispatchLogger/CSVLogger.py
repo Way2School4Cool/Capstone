@@ -1,11 +1,11 @@
 #Team Crime 9/13
 #Version 0.1
 
-from TwilioOutreach import checkLocations
 import csv
+import os
 from datetime import date, datetime
 from pathlib import Path
-import os
+from TwilioOutreach import checkLocations
 
 dispatchParseDoc = "DispatchAbbreviations.txt"
 
@@ -47,12 +47,9 @@ def writeToCSV(data):
 
 
 	writeData = writeData + dataLog
-	if finishedLooping == False:
-		checkLocations(writeData)
-	else:
-		checkLocations(dataLog)
+	checkLocations(dataLog)
 	
-	#append the users mentioned to the list
+		#append the users mentioned to the list
 	with open(dateFileName, mode="w", newline="") as dispatchFile:
 		writer = csv.writer(dispatchFile)
 		
@@ -71,7 +68,6 @@ def writeToCSV(data):
 			else:
 				newLine[3] = newLine[3][0 + len(newLine[2]):]
 				
-
 			writer.writerow(newLine)
 
 def dispatchCodeParser(dispatchArea):
