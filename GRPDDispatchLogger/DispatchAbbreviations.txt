@@ -46,3 +46,7 @@ UNKACC:Unknown Accident
 ABAND:Abandoned Vehicle
 ARSONINV:Arson Investigation
 UDAA:Vehicle Taken without Permission
+SUICIDEAT:Suicide Attempt
+OBSCENE:Obscenity
+BURGU:Burglary
+RECOVERY:

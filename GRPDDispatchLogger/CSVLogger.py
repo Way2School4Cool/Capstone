@@ -1,7 +1,7 @@
 #Team Crime 9/13
 #Version 0.1
 
-from asyncore import dispatcher, write
+from TwilioOutreach import checkLocations
 import csv
 from datetime import date, datetime
 from pathlib import Path
@@ -47,18 +47,31 @@ def writeToCSV(data):
 
 
 	writeData = writeData + dataLog
-
+	if finishedLooping == False:
+		checkLocations(writeData)
+	else:
+		checkLocations(dataLog)
+	
 	#append the users mentioned to the list
 	with open(dateFileName, mode="w", newline="") as dispatchFile:
 		writer = csv.writer(dispatchFile)
+		
+		#Clean up data
 		for newLine in writeData:
 
 			if newLine[2] == "":
-				if dispatchCodeParser(newLine[2]) != "":
-					newLine[2] = dispatchCodeParser(newLine[2])
-				if newLine[2] != "":
-					newLine[3] = newLine[3][0 + len(newLine[2]):]
+				newLine[2] = dispatchCodeParser(newLine[3])
+				newLine[3] = newLine[3][len(newLine[2]):]
 					
+			elif newLine[3] == "":
+				codeAreaPlaceholder = newLine[2]
+				newLine[2] = dispatchCodeParser(newLine[2])
+				newLine[3] = codeAreaPlaceholder[len(newLine[2]):]
+
+			else:
+				newLine[3] = newLine[3][0 + len(newLine[2]):]
+				
+
 			writer.writerow(newLine)
 
 def dispatchCodeParser(dispatchArea):
@@ -66,11 +79,9 @@ def dispatchCodeParser(dispatchArea):
 		reader = csv.reader(parseFile)
 
 		for dispatchCode in parseFile:
-
+			
 			#TODO: if dispatch area starts with a letter, the code is probably wrong (or check a for a "/")
-
-
-			if dispatchArea[0:len(dispatchCode)] == dispatchCode:
-				return dispatchCode
+			if dispatchArea.__contains__(dispatchCode[0:dispatchCode.find(":")]):
+				return dispatchCode[0:dispatchCode.find(":")]
 
 	return ""

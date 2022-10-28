@@ -29,7 +29,8 @@ def scrapeDispatch(url):
 
 			x = 16
 			incident = ""
-			while line[x].isalpha():
+			#while x < len(line) and line[x].isnumeric() == False:
+			while line[x].isalpha() == False:
 				incident = incident + line[x]
 				x = x+1
 			
@@ -40,9 +41,10 @@ def scrapeDispatch(url):
 	#TODO: fix assumtion that the first part of the location is a number
 
 	writeToCSV(data)
+	
 	return data
 
 while (True):
 	scrapeDispatch(url)
 	print("Logged: " + str(datetime.datetime.now()))
-	time.sleep(360)
+	time.sleep(3)
