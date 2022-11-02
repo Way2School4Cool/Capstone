@@ -1,5 +1,5 @@
-#Team Crime 9/13
-#Version 0.1
+#Team GR-PAL 11/1
+#Version 0.9.0
 
 import time
 import datetime
@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 
 headers = {"user-agent" : "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36;", "from": "cmcgraw@email.davenport.edu"}
 url = "https://data.grcity.us/Dispatch/Dispatched_Calls.html"
-authKeysLocation = "C:\\AuthTokens\\Tokens.csv"
 
 def scrapeDispatch(url):
 	#page = the url request
@@ -17,6 +16,7 @@ def scrapeDispatch(url):
 	pageContent = page.content
 	soup = BeautifulSoup(pageContent, "html.parser")
 	
+	#initialize data
 	data = []
 
 	headerContent = soup.find("table")

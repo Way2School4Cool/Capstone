@@ -1,7 +1,8 @@
 from twilio.rest import Client
+from Helper import getAuth
 
-account_sid = 'ACa3892293626495af286ab913180b99c9' 
-auth_token = '55a1bcb89bca7558e7fd63954add6494' 
+account_sid = getAuth("Twilio","Account_SID")
+auth_token = getAuth("Twilio", "Authorization_Token")
 client = Client(account_sid, auth_token) 
 
 twilioNumbersLocation = "C:\\AuthTokens\\TwilioNumbers.csv"

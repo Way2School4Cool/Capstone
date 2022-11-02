@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="CSVLogger.py" />
     <Compile Include="GRPDDispatchScraper.py" />
+    <Compile Include="Helper.py" />
     <Compile Include="TwilioOutreach.py" />
   </ItemGroup>
   <ItemGroup>
