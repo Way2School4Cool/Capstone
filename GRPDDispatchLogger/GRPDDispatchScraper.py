@@ -11,6 +11,16 @@ headers = {"user-agent" : "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTM
 url = "https://data.grcity.us/Dispatch/Dispatched_Calls.html"
 
 def scrapeDispatch(url):
+
+	try:
+	    #page = the url request
+		page = requests.get(url, headers = headers)
+		pageContent = page.content
+		soup = BeautifulSoup(pageContent, "html.parser")
+	except:
+		print("site down" + str(datetime.datetime.now()))
+		return ""
+
 	#page = the url request
 	page = requests.get(url, headers = headers)
 	pageContent = page.content
@@ -36,11 +46,8 @@ def scrapeDispatch(url):
 			location = line[x:]
 
 			data.append([date, time, incident, location])
-
-	#TODO: fix assumtion that the first part of the location is a number
-
+			
 	writeToCSV(data)
-	return data
 
 while (True):
 	scrapeDispatch(url)

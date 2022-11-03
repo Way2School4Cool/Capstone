@@ -25,6 +25,7 @@
     <Compile Include="GRPDDispatchScraper.py" />
     <Compile Include="Helper.py" />
     <Compile Include="TwilioOutreach.py" />
+    <Compile Include="TwitterBot.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DispatchAbbreviations.txt" />
