@@ -29,3 +29,7 @@ Installation:
 		If using another os, change file paths in the code as needed
 				
 		In these files you will include your authentication tokens for Twilio, Twitter, & Discord
+
+	3: Create a "PDLogs" folder at the same level as the "Capstone" folder.
+		
+		Feel free to leave this blank
