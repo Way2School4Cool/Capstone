@@ -6,7 +6,7 @@ Prerequisites:
 
 	2: pip packages:
 	
-		a: BeautifulSoup4
+		a: beautifulsoup4
 		
 		b: requests
 		
