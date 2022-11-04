@@ -12,7 +12,6 @@ def writeToCSV(data):
 	
 	writeData = data
 	loggingPath = Path(os.getcwd())
-	fileCreationNeeded = False
 	
 	#check if file exists
 	dateFileName = str(date.today().year) + "-" + str(date.today().month) + "-" + str(date.today().day) + "DispatchLog.csv"
@@ -25,7 +24,6 @@ def writeToCSV(data):
 	if not os.path.isfile(loggingPath):
 		with open(dateFileName, 'w') as fileCreation:
 			fileCreation.close()
-			fileCreationNeeded = True
 
 	#check if they are already in the csv:
 	with open(dateFileName, mode="r", newline="") as dispatchFile:
@@ -43,6 +41,7 @@ def writeToCSV(data):
 					#if so, do nothing
 					if (datetime.strptime(dispatchLog[0], '%m/%d/%Y') > datetime.strptime(writeData[x][0], '%m/%d/%Y')) or \
 						(datetime.strptime(dispatchLog[0], '%m/%d/%Y') == datetime.strptime(writeData[x][0], '%m/%d/%Y') and dispatchLog[1] >= writeData[x][1]):
+							
 							writeData = writeData[0: x]
 							finishedLooping = True
 							break
@@ -60,7 +59,7 @@ def writeToCSV(data):
 		else:
 			writeData[x][3] = writeData[x][3][0 + len(writeData[x][2]):]
 	
-	#checkLocations(writeData)
+	checkLocations(writeData)
 	writeData = writeData + dataLog
 	
 	

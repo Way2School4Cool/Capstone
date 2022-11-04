@@ -1,5 +1,3 @@
-import csv
-
 dispatchParseDoc = "DispatchAbbreviations.txt"
 authKeysLocation = "C:\\AuthTokens\\Tokens.csv"
 twilioNumbersLocation = "C:\\AuthTokens\\TwilioNumbers.csv"
