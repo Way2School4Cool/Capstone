@@ -1,8 +1,12 @@
 THREAT:Threat of Violence
+PDHR:
+PDB:
+91100: 
 PEACE:Disturbing the Peace
 TRES:Trespassing
 DISO:Disorderly
 ORDINANCE:Ordinance Violation
+DOMA:Domestic Assault
 DOM:Domestic Dispute
 ASSIST:Agency Assist
 WELFARE:Welfare Check
@@ -50,3 +54,7 @@ SUICIDEAT:Suicide Attempt
 OBSCENE:Obscenity
 BURGU:Burglary
 RECOVERY:
+VEHI:
+TRFCHS:
+ANIL:
+CHILD:
